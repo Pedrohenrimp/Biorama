@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fcb8b79276c6c345803c95bb344ab9c, type: 3}
+  m_Name: PopupManager
+  m_EditorClassIdentifier: 
+  popupDataSet:
+    keys: 020000000400000005000000
+    values:
+    - {fileID: 6471462274399712227, guid: 584f8d296796264458f14373a22af5a9, type: 3}
+    - {fileID: 2187478849617073229, guid: b753a89dddee8824397d81b7b16f7172, type: 3}
+    - {fileID: 2187478849617073229, guid: 1726b50889dc9ed49ab1cdbe4c4157f6, type: 3}
