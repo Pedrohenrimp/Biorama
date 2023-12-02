@@ -111,31 +111,13 @@ namespace Biorama.Player
         {
             mVelocityX = GetVelocityX();
 
-            if(!mPlayerController.isGrounded)
-            {
-                ApplyGravityEffect();
-            }
-            else
-            {
-                mVelocityY = IsJumping() ? (mJumpSpeed * Vector2.up) : Vector2.down;
-            }
-
+            ApplyGravityEffect();
             
-
             mFinalVelocity =  mVelocityX + mVelocityY;
+            MovePlayer(mFinalVelocity);
 
-            mPlayerController.Move(mFinalVelocity * Time.deltaTime);
-
-            mPlayerAnimator.SetBool("IsRuning", mVelocityX.x != 0);
-            mPlayerAnimator.SetBool("IsJumping", !mPlayerController.isGrounded);
-
-            if(mVelocityX.x != 0)
-            {
-                gameObject.transform.rotation = Quaternion.Euler(0, mVelocityX.x > 0 ? 0 : -180, 0);
-                ServiceLocator.Instance.CameraFollow.SetHorizontalOffsetDirection(mVelocityX.x);
-            }
-
-            
+            SetAnimation();
+            SetRotation();
         }
 
         public Vector2 GetVelocityX()
@@ -148,12 +130,39 @@ namespace Biorama.Player
 
         private void ApplyGravityEffect()
         {
-            mVelocityY += mGravity * Vector2.down * Time.deltaTime;
+            if(!mPlayerController.isGrounded)
+            {
+                mVelocityY += mGravity * Vector2.down * Time.deltaTime;
+            }
+            else
+            {
+                mVelocityY = IsJumping() ? (mJumpSpeed * Vector2.up) : Vector2.down;
+            }  
+        }
+
+        private void SetAnimation()
+        {
+            mPlayerAnimator.SetBool("IsRuning", mVelocityX.x != 0);
+            mPlayerAnimator.SetBool("IsJumping", !mPlayerController.isGrounded);
         }
 
         private bool IsJumping()
         {
             return (IsKeyDown(GameControl.Jump) || IsKeyDown(GameControl.MoveUp));
+        }
+
+        private void SetRotation()
+        {
+            if(mVelocityX.x != 0)
+            {
+                gameObject.transform.rotation = Quaternion.Euler(0, mVelocityX.x > 0 ? 0 : -180, 0);
+                ServiceLocator.Instance.CameraFollow.SetHorizontalOffsetDirection(mVelocityX.x);
+            }
+        }
+
+        private void MovePlayer(Vector2 aVelocity)
+        {
+            mPlayerController.Move(aVelocity * Time.deltaTime);
         }
         #endregion
     }

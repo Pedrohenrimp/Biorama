@@ -5,6 +5,11 @@ using UnityEngine;
 
 namespace Biorama.Popups
 {
+    public enum PaginationType
+    {
+        Right,
+        Left
+    }
     public class BookPopup : BasePopup<BookPopup>
     {
         private static readonly string PopupName = nameof(BookPopup);
@@ -15,6 +20,8 @@ namespace Biorama.Popups
         [SerializeField]
         [CustomName("Book Animator")]
         private Animator mBookAnimator;
+
+        private int mCurrentPage;
         #endregion
 
         #region Methods
@@ -34,14 +41,59 @@ namespace Biorama.Popups
 
         public void OnLeftButtonClicked()
         {
-            if(mBookAnimator.GetCurrentAnimatorStateInfo(0).IsName(Constants.BookNoneAnimaitonName))
-                mBookAnimator.Play(Constants.BookRightToLeftAnimaitonName);
+            if(CanPaginate(PaginationType.Left))
+            {
+                SetupPages(mCurrentPage);
+                PlayPaginationAnimation(PaginationType.Left);
+            }
         }
 
         public void OnRightButtonClicked()
         {
-            if(mBookAnimator.GetCurrentAnimatorStateInfo(0).IsName(Constants.BookNoneAnimaitonName))
-                mBookAnimator.Play(Constants.BookLeftToRightAnimaitonName);
+            if(CanPaginate(PaginationType.Right))
+            {
+                SetupPages(mCurrentPage);
+                PlayPaginationAnimation(PaginationType.Right);
+            }      
+        }
+
+
+        private bool CanPaginate(PaginationType aType)
+        {
+            switch(aType)
+            {
+                case PaginationType.Right:
+                    {
+                        return mBookAnimator.GetCurrentAnimatorStateInfo(0).IsName(Constants.BookNoneAnimaitonName);
+                    }
+                case PaginationType.Left:
+                    {
+                        return mBookAnimator.GetCurrentAnimatorStateInfo(0).IsName(Constants.BookNoneAnimaitonName);
+                    }
+            }
+            return false;
+        }
+
+        private void SetupPages(int mPage)
+        {
+
+        }
+
+        private void PlayPaginationAnimation(PaginationType aType)
+        {
+            switch(aType)
+            {
+                case PaginationType.Right:
+                    {
+                        mBookAnimator.Play(Constants.BookLeftToRightAnimaitonName);
+                        break;
+                    }
+                case PaginationType.Left:
+                    {
+                        mBookAnimator.Play(Constants.BookRightToLeftAnimaitonName);
+                        break;
+                    }
+            }
         }
 
         private void CloseBook()
