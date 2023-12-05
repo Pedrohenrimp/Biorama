@@ -5,6 +5,7 @@ using Biorama.ScriptableAssets.CustomSettings;
 using UnityEngine;
 using Biorama.ScriptableAssets.Inventory;
 using Biorama.Popups;
+using Biorama.ScriptableAssets.Book;
 
 namespace Biorama.Essentials
 {
@@ -55,6 +56,21 @@ namespace Biorama.Essentials
         [CustomName("Item Data List")]
         private ItemDataList mItemDataList;
         public ItemDataList ItemDataList => mItemDataList;
+
+        [SerializeField]
+        [CustomName("Player Book")]
+        private UserBook mUserBook;
+        public UserBook UserBook => mUserBook;
+
+        [SerializeField]
+        [CustomName("Animal Data List")]
+        private AnimalDataList mAnimalDataList;
+        public AnimalDataList AnimalDataList => mAnimalDataList;
+
+        [SerializeField]
+        [CustomName("Book Page List")]
+        private BookPageList mBookPageList;
+        public BookPageList BookPageList => mBookPageList;
         #endregion
 
         #region Primitive Attributes

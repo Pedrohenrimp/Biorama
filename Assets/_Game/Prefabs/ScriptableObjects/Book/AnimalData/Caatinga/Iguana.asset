@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df57b4cce72b48c4cbeb815e55ccf5b4, type: 3}
+  m_Name: Iguana
+  m_EditorClassIdentifier: 
+  Id: IGUANA_CAATINGA
+  Name: Iguana-verde
+  Description: "<b>Nome Cient\xEDfico:</b>\nIguana iguana\n<size=12> </size>\n<b>Origem:</b>\nCaatinga\n<size=12>
+    </size>\n<b>Grupo:</b>\nR\xE9pteis"
+  BiomeType: 3
+  Icon: {fileID: 21300000, guid: d5a4ec52ce30aa1438ed00c30a0af61e, type: 3}

@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df57b4cce72b48c4cbeb815e55ccf5b4, type: 3}
+  m_Name: Boto
+  m_EditorClassIdentifier: 
+  Id: BOTO_AMAZONIA
+  Name: Boto-cor-de-rosa
+  Description: "<b>Nome Cient\xEDfico:</b>\nInia geoffrensis\n<size=12> </size>\n<b>Origem:</b>\nAmaz\xF4nia\n<size=12>
+    </size>\n<b>Grupo:</b>\nMam\xEDferos"
+  BiomeType: 0
+  Icon: {fileID: 21300000, guid: 016b2ee9226906a448a6eed9ab445247, type: 3}

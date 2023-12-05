@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28bb303171bf2fa43af26600a6e799ed, type: 3}
+  m_Name: BookPageList
+  m_EditorClassIdentifier: 
+  pageList:
+    keys: 000000000100000002000000030000000400000005000000
+    values:
+    - {fileID: 11400000, guid: cd08751b998267140bb1893905c66775, type: 2}
+    - {fileID: 11400000, guid: ffe612307ae4a1b4c80666a00f50db01, type: 2}
+    - {fileID: 11400000, guid: 4e017a3c3ddbf0b4d9cc0ecfa5ac290d, type: 2}
+    - {fileID: 11400000, guid: 8bf7375278e6260468ccac0ce94b6f95, type: 2}
+    - {fileID: 11400000, guid: ab296624934d4f045b9460485cff5221, type: 2}
+    - {fileID: 11400000, guid: a38437f586ca89d4c95b71e6e5fd5e1d, type: 2}

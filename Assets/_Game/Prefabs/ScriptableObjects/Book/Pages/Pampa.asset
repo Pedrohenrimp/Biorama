@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fbbaa467231d8c4594d8f8cd40ea561, type: 3}
+  m_Name: Pampa
+  m_EditorClassIdentifier: 
+  leftAnimal: {fileID: 11400000, guid: 9f2841741fe67114db432804fffa5d7e, type: 2}
+  rightAnimal: {fileID: 11400000, guid: b26cac45a485caf4e850fcc5a72f85b6, type: 2}
+  biomeType: 5
