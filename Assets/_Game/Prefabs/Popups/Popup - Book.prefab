@@ -816,6 +816,26 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -151
       objectReference: {fileID: 0}
+    - target: {fileID: 7748616144436577773, guid: b39a0d34ce16e764a88522f9cc6e11f1, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -862451282, guid: 49347eb09cc93654bae7734bfd7744b5, type: 3}
+    - target: {fileID: 7748616144436577773, guid: b39a0d34ce16e764a88522f9cc6e11f1, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7748616144436577773, guid: b39a0d34ce16e764a88522f9cc6e11f1, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7748616144436577773, guid: b39a0d34ce16e764a88522f9cc6e11f1, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7748616144436577773, guid: b39a0d34ce16e764a88522f9cc6e11f1, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8200603135650093136, guid: b39a0d34ce16e764a88522f9cc6e11f1, type: 3}
       propertyPath: m_Name
       value: AnimalContent
