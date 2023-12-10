@@ -19,6 +19,8 @@ namespace Biorama.Popups
 
         public static SettingsPopup Instance => GetPopup(PopupName);
 
+        public static System.Action OnHide;
+
         #region Members
         [SerializeField]
         [CustomName("Audio Plus Button")]
@@ -47,6 +49,7 @@ namespace Biorama.Popups
 
         public override void Hide()
         {
+            OnHide?.Invoke();
             base.Hide();
         }
 

@@ -56,3 +56,4 @@ MonoBehaviour:
   mUserBook: {fileID: 11400000, guid: a86e183ccc671fc4e8ee371c19ad50c2, type: 2}
   mAnimalDataList: {fileID: 11400000, guid: d7ffcf3e18dc4f940b31f55be305189a, type: 2}
   mBookPageList: {fileID: 11400000, guid: caa613f340d973f4b972e79d0a4a5f65, type: 2}
+  mProviders: {fileID: 11400000, guid: b62852ca8fddcbb4595020678c6656e0, type: 2}

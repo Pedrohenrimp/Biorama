@@ -1,11 +1,13 @@
 using Biorama.Essentials;
 using UnityEngine;
 
-namespace Biorama.Collectible
+namespace Biorama.Collectibles
 {
     public class Collectible : MonoBehaviour
     {
         #region Members
+        public static System.Action OnCollectItem;
+
         [SerializeField]
         [CustomName("Item ID")]
         private string mItemId;
@@ -25,6 +27,7 @@ namespace Biorama.Collectible
             var itemDataObject = ServiceLocator.Instance.ItemDataList.GetItemDataObject(mItemId);
             ServiceLocator.Instance.UserInventory.AddItemData(itemDataObject.GetItemData());
             Destroy(gameObject);
+            OnCollectItem?.Invoke();
         }
         #endregion
     }

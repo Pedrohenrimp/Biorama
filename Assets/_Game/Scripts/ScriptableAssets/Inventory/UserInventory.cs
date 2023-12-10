@@ -97,6 +97,16 @@ namespace Biorama.ScriptableAssets.Inventory
 
             return null;
         }
+
+        public ItemData GetInventoryItemById(string aId)
+        {
+            for(int i = 0; i < PlayerInventoryData.CollectiblesList.Count; i++)
+            {
+                if(PlayerInventoryData.CollectiblesList[i].Id.Equals(aId))
+                    return PlayerInventoryData.CollectiblesList[i];
+            }
+            return null;
+        }
         #endregion
     }
 }

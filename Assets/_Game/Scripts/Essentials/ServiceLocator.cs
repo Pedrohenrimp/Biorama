@@ -6,6 +6,7 @@ using UnityEngine;
 using Biorama.ScriptableAssets.Inventory;
 using Biorama.Popups;
 using Biorama.ScriptableAssets.Book;
+using Biorama.ScriptableAssets.Providers;
 
 namespace Biorama.Essentials
 {
@@ -71,6 +72,11 @@ namespace Biorama.Essentials
         [CustomName("Book Page List")]
         private BookPageList mBookPageList;
         public BookPageList BookPageList => mBookPageList;
+
+        [SerializeField]
+        [CustomName("Providers")]
+        private Providers mProviders;
+        public Providers Providers => mProviders;
         #endregion
 
         #region Primitive Attributes
@@ -94,6 +100,13 @@ namespace Biorama.Essentials
             get => isInventoryOpenned;
             set => isInventoryOpenned = value;
         }
+
+        private BiomeType currentBiome = BiomeType.Amazonia;
+        public BiomeType CurrentBiome
+        {
+            get => currentBiome;
+            set => currentBiome = value;
+        }
         #endregion
 
         private void Start()
@@ -111,17 +124,10 @@ namespace Biorama.Essentials
             UserInventory.SaveInventoryData();
         }
 
-
-        public void OpenBook()
+        public void PauseGame(bool aPause)
         {
-            if(!BookPopup.Instance.isActiveAndEnabled)
-            {
-                BookPopup.Instance.Show();
-            }
-            else
-            {
-                BookPopup.Instance.Hide();
-            }
+            isGamePaused = aPause;
+            isGamePlaying = !aPause;
         }
     }
 }
