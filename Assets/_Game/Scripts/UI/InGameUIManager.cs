@@ -96,7 +96,8 @@ namespace Biorama.UI
 
         public void OnHomeButtonClicked()
         {
-            //ServiceLocator.Instance.SavingService.SaveCurrentSession();
+            ServiceLocator.Instance.SaveGameData();
+            
             HidePauseContent();
             ServiceLocator.Instance.CustomSceneManager.LoadScene(SceneType.MainScene);
         }

@@ -13,7 +13,7 @@ namespace Biorama.View
 
         private void OnEnable()
         {
-            //mContinueButton.interactable = ServiceLocator.Instance.PlayerGameData.HasSavedGame;
+            mContinueButton.interactable = ServiceLocator.Instance.PlayerGameData.HasSavedGame;
         }
         public void OnSettingsButtonClicked()
         {
@@ -22,6 +22,7 @@ namespace Biorama.View
 
         public void OnNewGameButtonClicked()
         {
+            ServiceLocator.Instance.PlayerGameData.ClearGameData();
             ServiceLocator.Instance.CustomSceneManager.LoadScene(SceneType.PlayScene);
         }
 

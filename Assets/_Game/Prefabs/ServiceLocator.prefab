@@ -57,3 +57,4 @@ MonoBehaviour:
   mAnimalDataList: {fileID: 11400000, guid: d7ffcf3e18dc4f940b31f55be305189a, type: 2}
   mBookPageList: {fileID: 11400000, guid: caa613f340d973f4b972e79d0a4a5f65, type: 2}
   mProviders: {fileID: 11400000, guid: b62852ca8fddcbb4595020678c6656e0, type: 2}
+  mPlayerGameData: {fileID: 11400000, guid: 53d39c6f0545d8d4eaea23edff966bb7, type: 2}

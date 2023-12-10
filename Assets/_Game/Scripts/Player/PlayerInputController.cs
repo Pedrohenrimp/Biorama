@@ -63,6 +63,9 @@ namespace Biorama.Player
 
             mGravity = 2 * mMaxHeight / Mathf.Pow(mPeakTime, 2);
             mJumpSpeed = mGravity * mPeakTime;
+
+            if(ServiceLocator.Instance.PlayerGameData.HasSavedGame)
+                gameObject.transform.position = ServiceLocator.Instance.PlayerGameData.GameData.PlayerPositon;
         }
 
         void Update()

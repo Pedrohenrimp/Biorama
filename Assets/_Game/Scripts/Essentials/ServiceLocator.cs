@@ -7,6 +7,7 @@ using Biorama.ScriptableAssets.Inventory;
 using Biorama.Popups;
 using Biorama.ScriptableAssets.Book;
 using Biorama.ScriptableAssets.Providers;
+using Biorama.ScriptableAssets.GameDatas;
 
 namespace Biorama.Essentials
 {
@@ -77,6 +78,11 @@ namespace Biorama.Essentials
         [CustomName("Providers")]
         private Providers mProviders;
         public Providers Providers => mProviders;
+
+        [SerializeField]
+        [CustomName("Player Game Data")]
+        private PlayerGameData mPlayerGameData;
+        public PlayerGameData PlayerGameData => mPlayerGameData;
         #endregion
 
         #region Primitive Attributes
@@ -112,22 +118,35 @@ namespace Biorama.Essentials
         private void Start()
         {
             UserInventory.LoadInventoryData();
+            PlayerGameData.LoadGameData();
+            UserBook.LoadBookData();
         }
 
         private void OnApplicationQuit()
         {
             UserInventory.SaveInventoryData();
+            PlayerGameData.SaveGameData();
+            UserBook.SaveBookData();
         }
 
         private void OnDestroy()
         {
             UserInventory.SaveInventoryData();
+            PlayerGameData.SaveGameData();
+            UserBook.SaveBookData();
         }
 
         public void PauseGame(bool aPause)
         {
             isGamePaused = aPause;
             isGamePlaying = !aPause;
+        }
+
+        public void SaveGameData()
+        {
+            PlayerGameData.GameData.CurrentBiome = CurrentBiome;
+            PlayerGameData.GameData.PlayerPositon = PlayerInputController.gameObject.transform.position;
+            PlayerGameData.SaveGameData();
         }
     }
 }
