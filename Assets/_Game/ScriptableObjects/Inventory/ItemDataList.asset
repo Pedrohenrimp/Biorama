@@ -14,6 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemDataList:
     keys:
-    - COLL_WOOD_MA
+    - COLL_WOOD_AM
+    - COLL_FLOWER_MA
+    - COLL_WATER_PN
+    - COLL_MUD_CA
+    - COLL_BRANCH_CE
+    - COLL_GRASS_PA
     values:
+    - {fileID: 11400000, guid: d0abfc85427efe344b01cbec39531964, type: 2}
     - {fileID: 11400000, guid: fdde4a488ed937748a768848f1bbb12f, type: 2}
+    - {fileID: 11400000, guid: da2aa686b5634d74e89041b1c123e86f, type: 2}
+    - {fileID: 11400000, guid: b0f04f582cde2ef4bb36966c6ddb43de, type: 2}
+    - {fileID: 11400000, guid: 4a9da029886143043b10f53daa7f7b85, type: 2}
+    - {fileID: 11400000, guid: 3e2d0521b39618b44a7012a5b4a98a82, type: 2}

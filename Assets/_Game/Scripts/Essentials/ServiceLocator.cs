@@ -27,7 +27,26 @@ namespace Biorama.Essentials
         [SerializeField]
         [CustomName("Popup Canvas")]
         private Transform mPopupCanvas;
-        public Transform PopupCanvasTransform => mPopupCanvas;
+        public Transform PopupCanvasTransform
+        {
+            get
+            {
+                if(mPopupCanvas == null)
+                {
+                    Canvas[] canvas = FindObjectsOfType<Canvas>(true);
+                    for(int i = 0; i < canvas.Length; i++)
+                    {
+                        if(canvas[i].gameObject.name.Equals("PopupCanvas"))
+                        {
+                            mPopupCanvas = canvas[i].gameObject.transform;
+                            break;
+                        }
+                    }
+                    
+                }
+                return mPopupCanvas;
+            }
+        }
 
         [SerializeField]
         [CustomName("Custom Scene Manager")]
@@ -86,6 +105,7 @@ namespace Biorama.Essentials
         #endregion
 
         #region Primitive Attributes
+        [SerializeField]
         private bool isGamePlaying = true;
         public bool IsGamePlaying
         {
@@ -93,6 +113,7 @@ namespace Biorama.Essentials
             set => isGamePlaying = value;
         }
 
+        [SerializeField]
         private bool isGamePaused = false;
         public bool IsGamePaused
         {
@@ -100,6 +121,7 @@ namespace Biorama.Essentials
             set => isGamePaused = value;
         }
 
+        [SerializeField]
         private bool isInventoryOpenned = false;
         public bool IsInventoryOpenned
         {
@@ -107,15 +129,25 @@ namespace Biorama.Essentials
             set => isInventoryOpenned = value;
         }
 
-        private BiomeType currentBiome = BiomeType.Amazonia;
+        [SerializeField]
+        private BiomeType currentBiome = BiomeType.None;
         public BiomeType CurrentBiome
         {
             get => currentBiome;
             set => currentBiome = value;
         }
+
+        [SerializeField]
+        private SceneType currentScene = SceneType.MainScene;
+        public SceneType CurrentScene
+        {
+            get => currentScene;
+            set => currentScene = value;
+        }
         #endregion
 
-        private void Start()
+        #region Methods
+        private void OnEnable()
         {
             UserInventory.LoadInventoryData();
             PlayerGameData.LoadGameData();
@@ -124,16 +156,19 @@ namespace Biorama.Essentials
 
         private void OnApplicationQuit()
         {
-            UserInventory.SaveInventoryData();
             PlayerGameData.SaveGameData();
+            UserInventory.SaveInventoryData();
             UserBook.SaveBookData();
         }
 
         private void OnDestroy()
         {
-            UserInventory.SaveInventoryData();
-            PlayerGameData.SaveGameData();
-            UserBook.SaveBookData();
+            if(CurrentScene == SceneType.PlayScene)
+            {
+                PlayerGameData.SaveGameData();
+                UserInventory.SaveInventoryData();
+                UserBook.SaveBookData();
+            }
         }
 
         public void PauseGame(bool aPause)
@@ -144,9 +179,23 @@ namespace Biorama.Essentials
 
         public void SaveGameData()
         {
-            PlayerGameData.GameData.CurrentBiome = CurrentBiome;
-            PlayerGameData.GameData.PlayerPositon = PlayerInputController.gameObject.transform.position;
-            PlayerGameData.SaveGameData();
+            if(CurrentScene == SceneType.PlayScene)
+            {
+                PlayerGameData.GameData.CurrentBiome = CurrentBiome;
+                PlayerGameData.GameData.PlayerPositon = PlayerInputController.gameObject.transform.position;
+                PlayerGameData.SaveGameData();
+            }
         }
+
+        public void SetPlayerInputController(PlayerInputController aPlayerInputController)
+        {
+            mPlayerInputController = aPlayerInputController;
+        }
+
+        public void SetCameraFollow(CameraFollow aCameraFollow)
+        {
+            mCameraFollow = aCameraFollow;
+        }
+        #endregion
     }
 }

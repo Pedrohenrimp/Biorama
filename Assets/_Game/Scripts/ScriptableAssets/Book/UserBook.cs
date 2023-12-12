@@ -8,7 +8,7 @@ namespace Biorama.ScriptableAssets.Book
     [Serializable]
     public class BookData
     {
-        public List<AnimalData> AnimalList = new List<AnimalData>();
+        public List<AnimalData> AnimalList;
     }
 
     [CreateAssetMenu(menuName = "Biorama/ScriptableAssets/Book/UserBook", fileName = "UserBook")]
@@ -31,6 +31,7 @@ namespace Biorama.ScriptableAssets.Book
             if(mPlayerBookData == null)
             {
                 mPlayerBookData = new BookData();
+                mPlayerBookData.AnimalList = new List<AnimalData>();
             }
 
         }
@@ -46,6 +47,7 @@ namespace Biorama.ScriptableAssets.Book
             if(mPlayerBookData == null)
             {
                 mPlayerBookData = new BookData();
+                mPlayerBookData.AnimalList = new List<AnimalData>();
             }
 
             var playerAnimal = GetAnimalData(ref mPlayerBookData.AnimalList, aAnimal);
@@ -88,7 +90,36 @@ namespace Biorama.ScriptableAssets.Book
 
         public bool ContainsAnimal(AnimalData aAnimalData)
         {
+            if(mPlayerBookData == null)
+            {
+                mPlayerBookData = new BookData();
+                mPlayerBookData.AnimalList = new List<AnimalData>();
+                return false;
+            }
+            else if(PlayerBookData.AnimalList == null)
+            {
+                mPlayerBookData.AnimalList = new List<AnimalData>();
+                return false;
+            }
+
             return GetAnimalData(ref mPlayerBookData.AnimalList, aAnimalData) != null;
+        }
+
+        public void ClearBookData()
+        {
+            if(PlayerBookData != null)
+            {
+                if(PlayerBookData.AnimalList != null)
+                    PlayerBookData.AnimalList.Clear();
+                else
+                    mPlayerBookData.AnimalList = new List<AnimalData>();
+            }
+            else
+            {
+                mPlayerBookData = new BookData();
+                mPlayerBookData.AnimalList = new List<AnimalData>();
+            }
+            SaveBookData();
         }
         #endregion
     }

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5304950487951610452}
   - component: {fileID: 476145166275887072}
   m_Layer: 0
-  m_Name: fundo_caatinga
+  m_Name: fundo_pampa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7686935a35989424eba1d20d309b6935, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 38ba5794e2a5da2408b7eb117bd12675, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 4312043816173911264}
   - component: {fileID: 2784078821900586389}
   m_Layer: 0
-  m_Name: fundo_caatinga
+  m_Name: fundo_pampa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -157,7 +157,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7686935a35989424eba1d20d309b6935, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 38ba5794e2a5da2408b7eb117bd12675, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -178,7 +178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2841696067499874071}
   m_Layer: 0
-  m_Name: View - Caatinga
+  m_Name: View - Pampa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -218,7 +218,7 @@ GameObject:
   - component: {fileID: 5420807506024245289}
   - component: {fileID: 3207502182204454531}
   m_Layer: 0
-  m_Name: fundo_caatinga
+  m_Name: fundo_pampa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -280,7 +280,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7686935a35989424eba1d20d309b6935, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 38ba5794e2a5da2408b7eb117bd12675, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -302,7 +302,7 @@ GameObject:
   - component: {fileID: 2117787771120544440}
   - component: {fileID: 1130351836592276997}
   m_Layer: 0
-  m_Name: fundo_caatinga
+  m_Name: fundo_pampa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -364,7 +364,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7686935a35989424eba1d20d309b6935, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 38ba5794e2a5da2408b7eb117bd12675, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -456,7 +456,7 @@ GameObject:
   - component: {fileID: 6036165424977236938}
   - component: {fileID: 1897955993517047528}
   m_Layer: 0
-  m_Name: fundo_caatinga
+  m_Name: fundo_pampa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -518,7 +518,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7686935a35989424eba1d20d309b6935, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 38ba5794e2a5da2408b7eb117bd12675, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -540,7 +540,7 @@ GameObject:
   - component: {fileID: 969904934120818600}
   - component: {fileID: 9077423373590389732}
   m_Layer: 0
-  m_Name: fundo_caatinga
+  m_Name: fundo_pampa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -602,7 +602,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7686935a35989424eba1d20d309b6935, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 38ba5794e2a5da2408b7eb117bd12675, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -781,7 +781,7 @@ GameObject:
   - component: {fileID: 3801460909679391802}
   - component: {fileID: 8805744259651823290}
   m_Layer: 0
-  m_Name: fundo_caatinga
+  m_Name: fundo_pampa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -843,7 +843,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7686935a35989424eba1d20d309b6935, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 38ba5794e2a5da2408b7eb117bd12675, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1006,7 +1006,7 @@ GameObject:
   - component: {fileID: 4335668947194883471}
   - component: {fileID: 4656517063925970816}
   m_Layer: 0
-  m_Name: fundo_caatinga
+  m_Name: fundo_pampa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1068,7 +1068,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7686935a35989424eba1d20d309b6935, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 38ba5794e2a5da2408b7eb117bd12675, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1167,7 +1167,7 @@ GameObject:
   - component: {fileID: 1351141648203521028}
   - component: {fileID: 4155081595037641537}
   m_Layer: 0
-  m_Name: fundo_caatinga
+  m_Name: fundo_pampa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1229,7 +1229,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7686935a35989424eba1d20d309b6935, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 38ba5794e2a5da2408b7eb117bd12675, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1251,7 +1251,7 @@ GameObject:
   - component: {fileID: 945126424809464949}
   - component: {fileID: 4596511395918048400}
   m_Layer: 0
-  m_Name: fundo_caatinga
+  m_Name: fundo_pampa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1313,7 +1313,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7686935a35989424eba1d20d309b6935, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 38ba5794e2a5da2408b7eb117bd12675, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1432,7 +1432,7 @@ GameObject:
   - component: {fileID: 8651899619807651198}
   - component: {fileID: 1377686822117567005}
   m_Layer: 0
-  m_Name: fundo_caatinga
+  m_Name: fundo_pampa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1494,7 +1494,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7686935a35989424eba1d20d309b6935, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 38ba5794e2a5da2408b7eb117bd12675, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1516,7 +1516,7 @@ GameObject:
   - component: {fileID: 8710557410885093130}
   - component: {fileID: 2888813444893254227}
   m_Layer: 0
-  m_Name: fundo_caatinga
+  m_Name: fundo_pampa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1578,7 +1578,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7686935a35989424eba1d20d309b6935, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 38ba5794e2a5da2408b7eb117bd12675, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1600,7 +1600,7 @@ GameObject:
   - component: {fileID: 6843535055870804594}
   - component: {fileID: 6809934291265128149}
   m_Layer: 0
-  m_Name: fundo_caatinga
+  m_Name: fundo_pampa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1662,7 +1662,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7686935a35989424eba1d20d309b6935, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 38ba5794e2a5da2408b7eb117bd12675, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1723,7 +1723,7 @@ GameObject:
   - component: {fileID: 8598744480822717002}
   - component: {fileID: 6834084359579155995}
   m_Layer: 0
-  m_Name: fundo_caatinga
+  m_Name: fundo_pampa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1785,7 +1785,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7686935a35989424eba1d20d309b6935, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 38ba5794e2a5da2408b7eb117bd12675, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1913,7 +1913,7 @@ GameObject:
   - component: {fileID: 6904830745138226004}
   - component: {fileID: 1908542555504910170}
   m_Layer: 0
-  m_Name: fundo_caatinga
+  m_Name: fundo_pampa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1975,7 +1975,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7686935a35989424eba1d20d309b6935, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 38ba5794e2a5da2408b7eb117bd12675, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2013,8 +2013,8 @@ Transform:
   m_GameObject: {fileID: 8804227115791351183}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7801.6, y: -502.08, z: -9719.999}
-  m_LocalScale: {x: 17797.262, y: 136.96576, z: 108}
+  m_LocalPosition: {x: 7801.6, y: -490.74, z: -9719.999}
+  m_LocalScale: {x: 17797.262, y: 160.24994, z: 108}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2841696067499874071}
@@ -2090,8 +2090,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1.1506919, z: 0.2}
-  m_Center: {x: 0, y: 0.028628033, z: 0}
+  m_Size: {x: 1, y: 1.0000001, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8876064262854848277
 GameObject:
   m_ObjectHideFlags: 0
@@ -2103,7 +2103,7 @@ GameObject:
   - component: {fileID: 9028397065980144303}
   - component: {fileID: 225861250845775082}
   m_Layer: 0
-  m_Name: fundo_caatinga
+  m_Name: fundo_pampa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2165,7 +2165,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7686935a35989424eba1d20d309b6935, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 38ba5794e2a5da2408b7eb117bd12675, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

@@ -14,6 +14,8 @@ namespace Biorama.ScriptableAssets.Book
         Pampa,
         None
     }
+
+    [Serializable]
     public class AnimalData
     {
         public string Id;

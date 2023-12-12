@@ -63,6 +63,27 @@ namespace Biorama.ScriptableAssets.Inventory
             SaveInventoryData();
         }
 
+        public void UpdateItemAmount(string aId, int aIncrement)
+        {
+            var playerItem = GetInventoryItemById(aId);
+            
+            if(playerItem != null)
+            {
+                playerItem.Amount += aIncrement;
+                if(playerItem.Amount <= 0)
+                {
+                    for(int i = 0; i < PlayerInventoryData.CollectiblesList.Count; i++)
+                    {
+                        if(PlayerInventoryData.CollectiblesList[i].Id.Equals(aId))
+                        {
+                            PlayerInventoryData.CollectiblesList.RemoveAt(i);
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+
         public void RemoveItemData(ItemData aItem)
         {
             var playerItem = GetItemData(ref PlayerInventoryData.CollectiblesList, aItem);
@@ -106,6 +127,12 @@ namespace Biorama.ScriptableAssets.Inventory
                     return PlayerInventoryData.CollectiblesList[i];
             }
             return null;
+        }
+
+        public void ClearInventoryData()
+        {
+            PlayerInventoryData.CollectiblesList.Clear();
+            SaveInventoryData();
         }
         #endregion
     }

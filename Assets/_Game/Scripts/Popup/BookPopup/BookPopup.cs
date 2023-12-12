@@ -19,6 +19,8 @@ namespace Biorama.Popups
 
         public static BookPopup Instance => GetPopup(PopupName);
 
+        public static System.Action OnUnlockAnimal;
+
         #region Members
         [SerializeField]
         [CustomName("Book Animator")]
@@ -107,16 +109,28 @@ namespace Biorama.Popups
         {
             var animalData = mLeftPageContent.GetAnimalData();
             ServiceLocator.Instance.UserBook.AddAnimalData(animalData);
+            ServiceLocator.Instance.UserInventory.UpdateItemAmount(Helpers.GetCollectableIdByBiomeType(animalData.BiomeType), -3);
             mLeftPageContent.SetupView(animalData);
             mLeftPageAnimationContent.SetupView(animalData);
+
+            mRightPageContent.SetupView(mCurrentPageObject.GetRightAnimalData());
+            mRightPageAnimationContent.SetupView(mCurrentPageObject.GetRightAnimalData());
+
+            OnUnlockAnimal?.Invoke();
         }
 
         public void OnUnlockRightAnimalButtonClicked()
         {
             var animalData = mRightPageContent.GetAnimalData();
             ServiceLocator.Instance.UserBook.AddAnimalData(animalData);
+            ServiceLocator.Instance.UserInventory.UpdateItemAmount(Helpers.GetCollectableIdByBiomeType(animalData.BiomeType), -3);
             mRightPageContent.SetupView(animalData);
             mRightPageAnimationContent.SetupView(animalData);
+
+            mLeftPageContent.SetupView(mCurrentPageObject.GetLeftAnimalData());
+            mLeftPageAnimationContent.SetupView(mCurrentPageObject.GetLeftAnimalData());
+
+            OnUnlockAnimal?.Invoke();
         }
 
         private bool CanPaginate(PaginationType aType)

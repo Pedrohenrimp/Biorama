@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67a4dd89968b469498221568a46c0780, type: 3}
-  m_Name: ItemDataObject
+  m_Name: COLL_WOOD_AM
   m_EditorClassIdentifier: 
-  Id: COLL_WOOD_MA
-  Name: Wood
-  Description: This is a wood used for testing porpuse
+  Id: COLL_WOOD_AM
+  Name: Fragmento da Amazonia
+  Description: "Este \xE9 um fragmento da Amaz\xF4nia"
   Amount: 1
   Type: 0
-  Icon: {fileID: 919694977, guid: f31cfef0eaf67bc41b76a18cbc549566, type: 3}
+  Icon: {fileID: -862451282, guid: 49347eb09cc93654bae7734bfd7744b5, type: 3}

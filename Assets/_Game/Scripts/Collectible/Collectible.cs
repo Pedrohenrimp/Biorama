@@ -11,9 +11,17 @@ namespace Biorama.Collectibles
         [SerializeField]
         [CustomName("Item ID")]
         private string mItemId;
+
+        [SerializeField]
+        [CustomName("Item Number")]
+        private int mItemNumber;
         #endregion
 
         #region Methods
+        private void OnEnable()
+        {
+            gameObject.SetActive(!ServiceLocator.Instance.PlayerGameData.ContainsCollectible(mItemNumber));
+        }
         private void OnTriggerEnter(Collider other)
         {
             if(other.CompareTag(Constants.PlayerTag))
@@ -26,6 +34,7 @@ namespace Biorama.Collectibles
         {
             var itemDataObject = ServiceLocator.Instance.ItemDataList.GetItemDataObject(mItemId);
             ServiceLocator.Instance.UserInventory.AddItemData(itemDataObject.GetItemData());
+            ServiceLocator.Instance.PlayerGameData.AddCollectible(mItemNumber);
             Destroy(gameObject);
             OnCollectItem?.Invoke();
         }

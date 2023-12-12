@@ -47,6 +47,12 @@ namespace Biorama.CameraManagement
         private Vector3 mVelocity = Vector3.zero;
         #endregion
 
+        #region Methods
+        private void OnEnable()
+        {
+            ServiceLocator.Instance.SetCameraFollow(this);
+        }
+
         private void Start()
         {
             mOffset = new Vector3(mHorizontalOffset, mVerticalOffset, Camera.main.transform.position.z);
@@ -83,5 +89,6 @@ namespace Biorama.CameraManagement
             }
 
         }
+        #endregion
     }
 }

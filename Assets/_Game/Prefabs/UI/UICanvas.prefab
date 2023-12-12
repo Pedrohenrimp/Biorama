@@ -1030,6 +1030,7 @@ GameObject:
   - component: {fileID: 5723879006058957264}
   - component: {fileID: 1052322054035256202}
   - component: {fileID: 9200601881443409998}
+  - component: {fileID: 9101750794906539350}
   m_Layer: 0
   m_Name: UICanvas
   m_TagString: Untagged
@@ -1156,6 +1157,33 @@ MonoBehaviour:
   mCollectibleLabel: {fileID: 7524840278705853040}
   mCollectibleContent: {fileID: 1847586268504625217}
   mBookButton: {fileID: 422406487643747644}
+  mPhaseManager: {fileID: 0}
+--- !u!114 &9101750794906539350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3584111253578251160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bab1a6c8e1f568644ba49bc1533f5b61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BiomeViews:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  BiomeCollectibles:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &3646579573190470563
 GameObject:
   m_ObjectHideFlags: 0

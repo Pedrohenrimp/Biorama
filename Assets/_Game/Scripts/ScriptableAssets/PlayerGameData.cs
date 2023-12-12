@@ -1,5 +1,6 @@
 using Biorama.Essentials;
 using Biorama.ScriptableAssets.Book;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Biorama.ScriptableAssets.GameDatas
@@ -8,6 +9,7 @@ namespace Biorama.ScriptableAssets.GameDatas
     {
         public BiomeType CurrentBiome;
         public Vector3 PlayerPositon;
+        public List<int> Collectibles;
     }
 
     [CreateAssetMenu(menuName = "Biorama/ScriptableAssets/GameData/PlayerGameData", fileName = "PlayerGameData")]
@@ -50,6 +52,32 @@ namespace Biorama.ScriptableAssets.GameDatas
         public void SaveGameData()
         {
             JsonUtils.ParseToJson(GameData, mPlayerGameDataJson);
+            mHasSavedGame = true;
+        }
+
+        public void AddCollectible(int aValue)
+        {
+            if(GameData.Collectibles == null)
+                GameData.Collectibles = new List<int>();
+
+            GameData.Collectibles.Add(aValue);
+            SaveGameData();
+        }
+
+        public void ClearCollectiblesList()
+        {
+            if(GameData.Collectibles != null)
+                GameData.Collectibles.Clear();
+            else
+                GameData.Collectibles = new List<int>();
+        }
+
+        public bool ContainsCollectible(int aValue)
+        {
+            if(GameData.Collectibles == null)
+                return false;
+
+            return GameData.Collectibles.Contains(aValue);
         }
         #endregion
     }

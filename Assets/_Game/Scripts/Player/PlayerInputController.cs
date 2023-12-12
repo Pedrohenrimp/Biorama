@@ -1,6 +1,8 @@
 using Biorama.Essentials;
 using Biorama.Events;
 using Biorama.ScriptableAssets.CustomSettings;
+using Biorama.UI;
+using System.Threading.Tasks;
 using UnityEngine;
 
 namespace Biorama.Player
@@ -59,13 +61,28 @@ namespace Biorama.Player
         #region Unity Methods
         private void OnEnable()
         {
+            InGameUIManager.OnNextBiome += SetPlayerStartPosition;
+
             mCustomGameControl = ServiceLocator.Instance.CustomGameControl;
 
             mGravity = 2 * mMaxHeight / Mathf.Pow(mPeakTime, 2);
             mJumpSpeed = mGravity * mPeakTime;
 
             if(ServiceLocator.Instance.PlayerGameData.HasSavedGame)
+            {
                 gameObject.transform.position = ServiceLocator.Instance.PlayerGameData.GameData.PlayerPositon;
+            }
+            else
+            {
+                SetPlayerStartPosition();
+            }
+
+            ServiceLocator.Instance.SetPlayerInputController(this);
+        }
+
+        private void OnDisable()
+        {
+            InGameUIManager.OnNextBiome -= SetPlayerStartPosition;
         }
 
         void Update()
@@ -166,6 +183,15 @@ namespace Biorama.Player
         private void MovePlayer(Vector2 aVelocity)
         {
             mPlayerController.Move(aVelocity * Time.deltaTime);
+        }
+
+        private async void SetPlayerStartPosition()
+        {
+            ServiceLocator.Instance.PauseGame(true);
+            await Task.Delay(200);
+            gameObject.transform.position = Helpers.GetPlayerSpawnPositionByBiomeType(ServiceLocator.Instance.CurrentBiome);
+            await Task.Delay(100);
+            ServiceLocator.Instance.PauseGame(false);
         }
         #endregion
     }
