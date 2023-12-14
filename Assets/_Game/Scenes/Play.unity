@@ -4988,10 +4988,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: View - Amazonia
       objectReference: {fileID: 0}
-    - target: {fileID: 412824853581593594, guid: a77c891cf3eb17442978e001842fbb58, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2841696067499874071, guid: a77c891cf3eb17442978e001842fbb58, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

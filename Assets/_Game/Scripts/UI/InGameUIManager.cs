@@ -191,7 +191,7 @@ namespace Biorama.UI
             {
                 mTransitionAnimator.gameObject.SetActive(true);
                 mTransitionAnimator.Play("FadeIn");
-                await Task.Delay(300);
+                await Task.Delay(400);
                 
                 ServiceLocator.Instance.CurrentBiome++;
                 if(ServiceLocator.Instance.CurrentBiome != BiomeType.None)
@@ -210,7 +210,7 @@ namespace Biorama.UI
                     mFinalPlayerAnimator.Play("player_win");
                 }
 
-                await Task.Delay(500);
+                await Task.Delay(600);
                 mTransitionAnimator.Play("FadeOut");
                 await Task.Delay(300);
                 mTransitionAnimator.gameObject.SetActive(false);
@@ -219,6 +219,7 @@ namespace Biorama.UI
 
         public async void OnCompleteGame()
         {
+            mFinalPlayerAnimator.gameObject.SetActive(false);
             mTransitionAnimator.gameObject.SetActive(true);
             mTransitionAnimator.Play("FadeIn");
             ServiceLocator.Instance.SaveGameData();
