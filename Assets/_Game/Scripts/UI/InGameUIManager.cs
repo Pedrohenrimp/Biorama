@@ -44,6 +44,22 @@ namespace Biorama.UI
         [CustomName("Next Button")]
         private Button mNextButton;
 
+        [SerializeField]
+        [CustomName("Final Scene Object")]
+        private GameObject mFinalSceneObject;
+
+        [SerializeField]
+        [CustomName("Final Player Animator")]
+        private Animator mFinalPlayerAnimator;
+
+        [SerializeField]
+        [CustomName("Book Button Animator")]
+        private Animator mBookButtonAnimator;
+
+        [SerializeField]
+        [CustomName("Transition Animator")]
+        private Animator mTransitionAnimator;
+
         private bool mIsSettingsOpenned;
 
         private bool mCanGoNext;
@@ -53,8 +69,9 @@ namespace Biorama.UI
         #endregion
 
         #region Methods
-        private void OnEnable()
+        private async void OnEnable()
         {
+            mTransitionAnimator.gameObject.SetActive(true);
             Collectible.OnCollectItem += SetupCollectibleInfo;
             BookPopup.OnUnlockAnimal += SetupCollectibleInfo;
             SettingsPopup.OnHide += OnHideSettings;
@@ -62,6 +79,11 @@ namespace Biorama.UI
             SetupCollectibleInfo();
             mPhaseManager.SetBiome(ServiceLocator.Instance.CurrentBiome);
             mNextButton.gameObject.transform.position = Helpers.GetNextButtonPositionByBiomeType(ServiceLocator.Instance.CurrentBiome);
+
+            await Task.Delay(800);
+            mTransitionAnimator.Play("FadeOut");
+            await Task.Delay(300);
+            mTransitionAnimator.gameObject.SetActive(false);
         }
 
         private void OnDisable()
@@ -116,9 +138,11 @@ namespace Biorama.UI
             }
         }
 
-        public void OnHomeButtonClicked()
+        public async void OnHomeButtonClicked()
         {
+            mTransitionAnimator.gameObject.SetActive(true);
             ServiceLocator.Instance.SaveGameData();
+            await Task.Delay(500);
             HidePauseContent();
             ServiceLocator.Instance.CurrentScene = SceneType.MainScene;
             ServiceLocator.Instance.CustomSceneManager.LoadScene(SceneType.MainScene);
@@ -134,6 +158,7 @@ namespace Biorama.UI
 
             mCanGoNext = ServiceLocator.Instance.UserBook.PlayerBookData.AnimalList.Count >= ((int)currentBiome + 1) * 2;
             mNextButton.interactable = mCanGoNext;
+            mBookButtonAnimator.enabled = HasEnoughToUnlock();
         }
 
         public void ShowPauseContent()
@@ -158,19 +183,56 @@ namespace Biorama.UI
             mIsSettingsOpenned = false;
         }
 
-        public void LoadNextBiome()
+        public async void LoadNextBiome()
         {
             if(mCanGoNext)
             {
+                mTransitionAnimator.gameObject.SetActive(true);
+                
                 ServiceLocator.Instance.CurrentBiome++;
-                ServiceLocator.Instance.PlayerGameData.GameData.CurrentBiome = ServiceLocator.Instance.CurrentBiome;
-                ServiceLocator.Instance.PlayerGameData.ClearCollectiblesList();
-                ServiceLocator.Instance.PlayerGameData.SaveGameData();
-                SetupCollectibleInfo();
-                mPhaseManager.SetBiome(ServiceLocator.Instance.CurrentBiome);
-                OnNextBiome?.Invoke();
-                mNextButton.gameObject.transform.position = Helpers.GetNextButtonPositionByBiomeType(ServiceLocator.Instance.CurrentBiome);
+                if(ServiceLocator.Instance.CurrentBiome != BiomeType.None)
+                {
+                    ServiceLocator.Instance.PlayerGameData.GameData.CurrentBiome = ServiceLocator.Instance.CurrentBiome;
+                    ServiceLocator.Instance.PlayerGameData.ClearCollectiblesList();
+                    ServiceLocator.Instance.PlayerGameData.SaveGameData();
+                    SetupCollectibleInfo();
+                    mPhaseManager.SetBiome(ServiceLocator.Instance.CurrentBiome);
+                    OnNextBiome?.Invoke();
+                    mNextButton.gameObject.transform.position = Helpers.GetNextButtonPositionByBiomeType(ServiceLocator.Instance.CurrentBiome);
+                }
+                else
+                {
+                    mFinalSceneObject.SetActive(true);
+                    mFinalPlayerAnimator.Play("player_win");
+                }
+
+                await Task.Delay(800);
+                mTransitionAnimator.Play("FadeOut");
+                await Task.Delay(300);
+                mTransitionAnimator.gameObject.SetActive(false);
             }
+        }
+
+        public async void OnCompleteGame()
+        {
+            mTransitionAnimator.gameObject.SetActive(true);
+            ServiceLocator.Instance.SaveGameData();
+            ServiceLocator.Instance.PlayerGameData.ClearGameData();
+            await Task.Delay(500);
+            ServiceLocator.Instance.CurrentScene = SceneType.MainScene;
+            ServiceLocator.Instance.CustomSceneManager.LoadScene(SceneType.MainScene);
+        }
+
+        private bool HasEnoughToUnlock()
+        {
+            var inventory = ServiceLocator.Instance.UserInventory.PlayerInventoryData.CollectiblesList;
+            for(int i = 0; i < inventory.Count; i++)
+            {
+                if(inventory[i].Amount >= 3)
+                    return true;
+            }
+
+            return false;
         }
         #endregion
     }

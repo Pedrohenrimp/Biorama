@@ -1,5 +1,6 @@
 using Biorama.Essentials;
 using Biorama.ScriptableAssets.Book;
+using Biorama.UI.Text;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -41,11 +42,25 @@ namespace Biorama.Popups.Book
         [CustomName("Collectable Button")]
         private Button mCollectableButton;
 
+        [SerializeField]
+        [CustomName("Fragment Animator")]
+        private Animator mFragmentAnimator;
+
+        [SerializeField]
+        [CustomName("Unlock Animator")]
+        private Animator mUnlockAnimator;
+
+        [SerializeField]
+        [CustomName("Fade Animator")]
+        private Animator mFadeAnimator;
+
         private AnimalData mAnimalData;
 
 
         public void SetupView(AnimalData aAnimalData)
         {
+            mFadeAnimator.Play("FadeIn");
+            mUnlockAnimator.enabled = false;
             mAnimalData = aAnimalData;
             var hasAnimal = ServiceLocator.Instance.UserBook.ContainsAnimal(aAnimalData);
             mBlockedContent.SetActive(!hasAnimal);
@@ -54,7 +69,6 @@ namespace Biorama.Popups.Book
 
             if(aAnimalData != null && hasAnimal)
             {
-
                 mAnimalNameLabel.text = aAnimalData.Name;
                 mAnimalDescriptionLabel.text = aAnimalData.Description;
                 mAnimalIcon.sprite = aAnimalData.Icon;
@@ -85,7 +99,15 @@ namespace Biorama.Popups.Book
                 var amount = collectable != null ? collectable.Amount : 0;
                 mCollectableLabel.text = $"{amount}/{Constants.CollectableRequirimentAmount}";
                 mCollectableButton.interactable = amount >= Constants.CollectableRequirimentAmount;
+                mFragmentAnimator.enabled = amount >= Constants.CollectableRequirimentAmount;
             }
+        }
+
+        public void PlayUnlockAnimation()
+        {
+            mUnlockAnimator.enabled = true;
+            mCollectableContent.SetActive(false);
+            mAnimalNameLabel.text = string.Empty;
         }
     }
 }

@@ -3,6 +3,7 @@ using Biorama.Popups.Book;
 using Biorama.ScriptableAssets.Book;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -105,11 +106,13 @@ namespace Biorama.Popups
             }      
         }
 
-        public void OnUnlockLeftAnimalButtonClicked()
+        public async void OnUnlockLeftAnimalButtonClicked()
         {
             var animalData = mLeftPageContent.GetAnimalData();
             ServiceLocator.Instance.UserBook.AddAnimalData(animalData);
             ServiceLocator.Instance.UserInventory.UpdateItemAmount(Helpers.GetCollectableIdByBiomeType(animalData.BiomeType), -3);
+            mLeftPageContent.PlayUnlockAnimation();
+            await Task.Delay(2000);
             mLeftPageContent.SetupView(animalData);
             mLeftPageAnimationContent.SetupView(animalData);
 
@@ -119,11 +122,13 @@ namespace Biorama.Popups
             OnUnlockAnimal?.Invoke();
         }
 
-        public void OnUnlockRightAnimalButtonClicked()
+        public async void OnUnlockRightAnimalButtonClicked()
         {
             var animalData = mRightPageContent.GetAnimalData();
             ServiceLocator.Instance.UserBook.AddAnimalData(animalData);
             ServiceLocator.Instance.UserInventory.UpdateItemAmount(Helpers.GetCollectableIdByBiomeType(animalData.BiomeType), -3);
+            mRightPageContent.PlayUnlockAnimation();
+            await Task.Delay(2000);
             mRightPageContent.SetupView(animalData);
             mRightPageAnimationContent.SetupView(animalData);
 

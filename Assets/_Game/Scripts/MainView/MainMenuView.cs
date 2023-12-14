@@ -1,6 +1,7 @@
 using Biorama.Essentials;
 using Biorama.Popups;
 using Biorama.ScriptableAssets.Book;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,9 +13,25 @@ namespace Biorama.View
         [CustomName("Continue Button")]
         private Button mContinueButton;
 
+        [SerializeField]
+        [CustomName("Cut Scene Object")]
+        private GameObject mCutSceneObject;
+
+        [SerializeField]
+        [CustomName("Transition Animator")]
+        private Animator mTransitionAnimator;
+
         private void Start()
         {
             mContinueButton.interactable = ServiceLocator.Instance.PlayerGameData.HasSavedGame;
+        }
+
+        private async void OnEnable()
+        {
+            mTransitionAnimator.gameObject.SetActive(true);
+            mTransitionAnimator.Play("FadeOut");
+            await Task.Delay(800);
+            mTransitionAnimator.gameObject.SetActive(false);
         }
         public void OnSettingsButtonClicked()
         {
@@ -23,13 +40,7 @@ namespace Biorama.View
 
         public void OnNewGameButtonClicked()
         {
-            ServiceLocator.Instance.PlayerGameData.ClearGameData();
-            ServiceLocator.Instance.UserInventory.ClearInventoryData();
-            ServiceLocator.Instance.UserBook.ClearBookData();
-            ServiceLocator.Instance.CurrentScene = SceneType.PlayScene;
-            ServiceLocator.Instance.CustomSceneManager.LoadScene(SceneType.PlayScene);
-            ServiceLocator.Instance.IsGamePlaying = true;
-            ServiceLocator.Instance.CurrentBiome = BiomeType.Amazonia;
+            mCutSceneObject.SetActive(true);
         }
 
         public void OnContinueButtonClicked()
