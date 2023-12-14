@@ -30,7 +30,7 @@ namespace Biorama.View
         {
             mTransitionAnimator.gameObject.SetActive(true);
             mTransitionAnimator.Play("FadeOut");
-            await Task.Delay(800);
+            await Task.Delay(500);
             mTransitionAnimator.gameObject.SetActive(false);
         }
         public void OnSettingsButtonClicked()

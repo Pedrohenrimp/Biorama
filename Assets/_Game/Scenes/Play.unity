@@ -1873,7 +1873,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!114 &866919225
 MonoBehaviour:
@@ -4811,6 +4811,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2457206341971181548, guid: 7c3271cb3ce27d24c92e109f68cca6d0, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 2000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2457206341971181548, guid: 7c3271cb3ce27d24c92e109f68cca6d0, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 1200
+      objectReference: {fileID: 0}
     - target: {fileID: 3584111253578251160, guid: 7c3271cb3ce27d24c92e109f68cca6d0, type: 3}
       propertyPath: m_Name
       value: UICanvas
@@ -4951,7 +4959,8 @@ PrefabInstance:
       propertyPath: mNextButton
       value: 
       objectReference: {fileID: 866919225}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8927579628625885334, guid: 7c3271cb3ce27d24c92e109f68cca6d0, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

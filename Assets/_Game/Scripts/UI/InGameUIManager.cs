@@ -72,6 +72,7 @@ namespace Biorama.UI
         private async void OnEnable()
         {
             mTransitionAnimator.gameObject.SetActive(true);
+
             Collectible.OnCollectItem += SetupCollectibleInfo;
             BookPopup.OnUnlockAnimal += SetupCollectibleInfo;
             SettingsPopup.OnHide += OnHideSettings;
@@ -80,7 +81,7 @@ namespace Biorama.UI
             mPhaseManager.SetBiome(ServiceLocator.Instance.CurrentBiome);
             mNextButton.gameObject.transform.position = Helpers.GetNextButtonPositionByBiomeType(ServiceLocator.Instance.CurrentBiome);
 
-            await Task.Delay(800);
+            await Task.Delay(500);
             mTransitionAnimator.Play("FadeOut");
             await Task.Delay(300);
             mTransitionAnimator.gameObject.SetActive(false);
@@ -141,6 +142,7 @@ namespace Biorama.UI
         public async void OnHomeButtonClicked()
         {
             mTransitionAnimator.gameObject.SetActive(true);
+            mTransitionAnimator.Play("FadeIn");
             ServiceLocator.Instance.SaveGameData();
             await Task.Delay(500);
             HidePauseContent();
@@ -188,6 +190,8 @@ namespace Biorama.UI
             if(mCanGoNext)
             {
                 mTransitionAnimator.gameObject.SetActive(true);
+                mTransitionAnimator.Play("FadeIn");
+                await Task.Delay(300);
                 
                 ServiceLocator.Instance.CurrentBiome++;
                 if(ServiceLocator.Instance.CurrentBiome != BiomeType.None)
@@ -206,7 +210,7 @@ namespace Biorama.UI
                     mFinalPlayerAnimator.Play("player_win");
                 }
 
-                await Task.Delay(800);
+                await Task.Delay(500);
                 mTransitionAnimator.Play("FadeOut");
                 await Task.Delay(300);
                 mTransitionAnimator.gameObject.SetActive(false);
@@ -216,6 +220,7 @@ namespace Biorama.UI
         public async void OnCompleteGame()
         {
             mTransitionAnimator.gameObject.SetActive(true);
+            mTransitionAnimator.Play("FadeIn");
             ServiceLocator.Instance.SaveGameData();
             ServiceLocator.Instance.PlayerGameData.ClearGameData();
             await Task.Delay(500);
