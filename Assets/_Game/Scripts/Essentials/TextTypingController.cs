@@ -44,6 +44,8 @@ namespace Biorama.UI.Text
         private string mPartialText;
 
         private int mCurrentCharacter;
+
+        public static System.Action<bool> CanContinue;
         #endregion
 
         #region Methods

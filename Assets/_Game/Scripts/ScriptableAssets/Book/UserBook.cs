@@ -19,6 +19,10 @@ namespace Biorama.ScriptableAssets.Book
         [CustomName("Animal Data Json")]
         private TextAsset mAnimalDataJson;
 
+        [SerializeField]
+        [CustomName("Path")]
+        private string mPath;
+
         private BookData mPlayerBookData;
         public BookData PlayerBookData => mPlayerBookData;
         
@@ -39,7 +43,7 @@ namespace Biorama.ScriptableAssets.Book
 
         public void SaveBookData()
         {
-            JsonUtils.ParseToJson(PlayerBookData, mAnimalDataJson);
+            JsonUtils.ParseToJson(PlayerBookData, mPath);
         }
 
         public void AddAnimalData(AnimalData aAnimal)

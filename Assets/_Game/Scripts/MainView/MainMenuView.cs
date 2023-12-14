@@ -50,5 +50,10 @@ namespace Biorama.View
             ServiceLocator.Instance.IsGamePlaying = true;
             ServiceLocator.Instance.CurrentBiome = ServiceLocator.Instance.PlayerGameData.GameData.CurrentBiome;
         }
+
+        public void QuitGame()
+        {
+            Application.Quit();
+        }
     }
 }

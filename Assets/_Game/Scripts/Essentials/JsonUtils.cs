@@ -12,10 +12,10 @@ namespace Biorama.Essentials
             return obj;
         }
 
-        public static void ParseToJson<T>(T aObject, TextAsset aJsonData)
+        public static void ParseToJson<T>(T aObject, string aJsonPath)
         {
             var json = JsonUtility.ToJson(aObject);
-            File.WriteAllText(AssetDatabase.GetAssetPath(aJsonData), json);
+            File.WriteAllText(Application.dataPath + aJsonPath, json);
         }
     }
 }

@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: UserInventory
   m_EditorClassIdentifier: 
   mInventoryDataJson: {fileID: 4900000, guid: 693979dc30fda55459045c99ad4d772b, type: 3}
+  mPath: /_Game/GameData/Inventory/Inventory.json

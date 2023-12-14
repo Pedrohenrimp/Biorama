@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: AnimalList
   m_EditorClassIdentifier: 
   mAnimalDataJson: {fileID: 4900000, guid: 4fd4e45679a49cb42a6eaa8c965b5394, type: 3}
+  mPath: /_Game/GameData/Book/Book.json

@@ -17,3 +17,4 @@ MonoBehaviour:
     values: 6300000069000000200000007300000061000000640000007700000070000000
   customGameControlDataJson: {fileID: 4900000, guid: 311199bef286d304e9b2d7942cea9d94, type: 3}
   defaultGameControlDataJson: {fileID: 4900000, guid: 1b5209f2d76ed164498c3bb2fc727a66, type: 3}
+  mPath: /_Game/GameData/PlayerPrefs/CustomGameControlGameData.json

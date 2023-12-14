@@ -1,7 +1,10 @@
 using Biorama.Essentials;
 using Biorama.ScriptableAssets.Book;
+using Biorama.UI.Text;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Biorama.ScriptableAssets.UI
 {
@@ -11,7 +14,6 @@ namespace Biorama.ScriptableAssets.UI
 
         private int mCurrentPage = 0;
         #region Methods
-
         public void GetNextPage()
         {
             mCurrentPage++;
@@ -35,11 +37,12 @@ namespace Biorama.ScriptableAssets.UI
             }
         }
 
-        public void OnNewGameButtonClicked()
+        public async void OnNewGameButtonClicked()
         {
             ServiceLocator.Instance.PlayerGameData.ClearGameData();
             ServiceLocator.Instance.UserInventory.ClearInventoryData();
             ServiceLocator.Instance.UserBook.ClearBookData();
+            await Task.Delay(200);
             ServiceLocator.Instance.CurrentScene = SceneType.PlayScene;
             ServiceLocator.Instance.CustomSceneManager.LoadScene(SceneType.PlayScene);
             ServiceLocator.Instance.IsGamePlaying = true;

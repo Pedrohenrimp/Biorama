@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: PlayerGameData
   m_EditorClassIdentifier: 
   mPlayerGameDataJson: {fileID: 4900000, guid: a017ba00e3e022c45abda8f7c3b0e94a, type: 3}
+  mPath: /_Game/GameData/PlayerGameData.json

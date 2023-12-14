@@ -19,6 +19,10 @@ namespace Biorama.ScriptableAssets.GameDatas
         [CustomName("Player Game Data Json")]
         private TextAsset mPlayerGameDataJson;
 
+        [SerializeField]
+        [CustomName("Path")]
+        private string mPath;
+
         private GameData mGameData;
         public GameData GameData => mGameData;
 
@@ -51,7 +55,7 @@ namespace Biorama.ScriptableAssets.GameDatas
 
         public void SaveGameData()
         {
-            JsonUtils.ParseToJson(GameData, mPlayerGameDataJson);
+            JsonUtils.ParseToJson(GameData, mPath);
             mHasSavedGame = true;
         }
 

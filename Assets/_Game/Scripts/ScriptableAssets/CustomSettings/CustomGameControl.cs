@@ -39,6 +39,10 @@ namespace Biorama.ScriptableAssets.CustomSettings
         [SerializeField]
         private TextAsset defaultGameControlDataJson;
 
+        [SerializeField]
+        [CustomName("Path")]
+        private string mPath;
+
         public KeyCode GetValue(GameControl aGameControl)
         {
             customGameControl.TryGetValue(aGameControl, out KeyCode value);
@@ -109,7 +113,7 @@ namespace Biorama.ScriptableAssets.CustomSettings
 
         private void SaveCustomControlData(GameControlObject aObject)
         {
-            JsonUtils.ParseToJson(aObject, customGameControlDataJson);
+            JsonUtils.ParseToJson(aObject, mPath);
         }
     }
 }

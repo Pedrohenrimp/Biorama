@@ -3,6 +3,7 @@ using UnityEditor;
 
 namespace Biorama.Essentials
 {
+    #if UNITY_EDITOR
     [CustomPropertyDrawer(typeof(CustomNameAttribute))]
     public class CustomNameDrawer : PropertyDrawer
     {
@@ -12,6 +13,7 @@ namespace Biorama.Essentials
             EditorGUI.PropertyField(aPosition, aProperty, new GUIContent(att.CustomName));
         }
     }
+    #endif
 }
 
 

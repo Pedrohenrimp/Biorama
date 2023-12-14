@@ -20,6 +20,10 @@ namespace Biorama.ScriptableAssets.Inventory
         [CustomName("Inventory Data Json")]
         private TextAsset mInventoryDataJson;
 
+        [SerializeField]
+        [CustomName("Path")]
+        private string mPath;
+
         private InventoryData mPlayerInventoryData;
         public InventoryData PlayerInventoryData => mPlayerInventoryData;
         
@@ -39,7 +43,7 @@ namespace Biorama.ScriptableAssets.Inventory
 
         public void SaveInventoryData()
         {
-            JsonUtils.ParseToJson(PlayerInventoryData, mInventoryDataJson);
+            JsonUtils.ParseToJson(PlayerInventoryData, mPath);
         }
 
         public void AddItemData(ItemData aItem)
