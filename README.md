@@ -2,6 +2,7 @@
  Biorama é um jogo digital educacional que retrata os biomas brasileiros. Este projeto, elaborado e desenvolvido por Pedro Mendes, faz parte do trabalho de conclusão de curso (TCC) do curso de Ciência da Computação da UFF de Rio das Ostras.
 
 ## Enredo
+O enredo do jogo é contado ao iniciar um novo jogo. O jogo se passa em um cenário pós-apocaliptico no ano de 2050.
 <p align="center">
  <img src="https://github.com/Pedrohenrimp/Biorama/assets/59147319/ccd955dd-9035-4600-b73e-353f79e72d2b" width=60% height=60% align=center>
  </br></br>
